@@ -1,0 +1,466 @@
+/* =========================
+   RESET & BASE
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Segoe UI", system-ui, sans-serif;
+  background:#f1f5f9;
+  color:#1e293b;
+  line-height:1.6;
+  font-size:18px;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   GLOBAL SECTIONS
+========================= */
+section{
+  padding:100px 24px;
+}
+
+.about-section{
+  background:#f1f5f9;
+}
+
+.services-section{
+  background:#ffffff;
+}
+
+.section-header{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 70px;
+}
+
+.section-header h2,
+.about-container h2{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.section-header p{
+  color:#475569;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(135deg,#0d9488 0%,#0f172a 100%);
+  box-shadow:0 8px 20px rgba(13,148,136,.25);
+}
+
+.header-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#ffffff;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+}
+
+.clinic-word{
+  color:#5eead4;
+  margin-left:8px;
+  opacity:0;
+  animation:slideClinic 2s forwards;
+}
+
+@keyframes slideClinic{
+  from{transform:translate(-60px,-20px);opacity:0;}
+  to{transform:translate(0,0);opacity:1;}
+}
+
+#menu-toggle{display:none;}
+
+.hamburger{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.nav-menu{
+  display:flex;
+}
+
+.nav-menu a{
+  margin-left:32px;
+  font-weight:600;
+  color:rgba(255,255,255,.85);
+  transition:.3s;
+}
+
+.nav-menu a:hover{
+  color:#5eead4;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.hero-section h1{
+  font-size:clamp(36px,5vw,64px);
+  font-weight:800;
+  margin-bottom:22px;
+}
+
+.hero-subtext{
+  color:#475569;
+  margin-bottom:40px;
+}
+
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+/* =========================
+   DOCTOR CARD
+========================= */
+.doctor-card{
+  background:#ffffff;
+  padding:45px;
+  border-radius:45px;
+  max-width:400px;
+  margin:0 auto 45px;
+  box-shadow:0 25px 50px rgba(0,0,0,.12);
+  border-top:8px solid #0d9488;
+}
+
+.doctor-image{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:#ccfbf1;
+  border:5px solid #0d9488;
+  margin:0 auto 18px;
+}
+
+.designation{
+  color:#0d9488;
+  font-weight:700;
+}
+
+.sub-info{
+  font-size:14px;
+  color:#64748b;
+  margin-top:10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary{
+  padding:16px 36px;
+  background:#0d9488;
+  color:#ffffff;
+  border-radius:999px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-primary:hover{
+  background:#0f766e;
+}
+
+.btn-secondary{
+  padding:16px 36px;
+  border:2px solid #0d9488;
+  color:#0d9488;
+  border-radius:999px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-secondary:hover{
+  background:#0d9488;
+  color:#ffffff;
+}
+
+/* =========================
+   SERVICES / TESTIMONIALS
+========================= */
+.services-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.service-card{
+  background:linear-gradient(135deg,#0d9488,#0f172a);
+  color:#ffffff;
+  padding:60px 40px;
+  border-radius:40px;
+  text-align:center;
+  transition:.4s;
+  position:relative;
+}
+
+.service-card:hover{
+  transform:translateY(-12px);
+}
+
+.service-icon{
+  font-size:48px;
+  margin-bottom:18px;
+}
+
+.service-card p{
+  font-size:17px;
+  line-height:1.7;
+}
+
+.service-card::before{
+  content:"“";
+  font-size:80px;
+  position:absolute;
+  top:20px;
+  left:30px;
+  opacity:.15;
+}
+
+/* =========================
+   ABOUT / FAQ / TIMINGS / LOCATION
+========================= */
+.about-container{
+  max-width:900px;
+  margin:0 auto;
+  background:#ffffff;
+  padding:55px;
+  border-radius:45px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.about-container p{
+  color:#334155;
+  margin-bottom:22px;
+}
+
+.about-container strong{
+  color:#0d9488;
+}
+
+/* clickable address */
+.about-container a{
+  color:#0d9488;
+  font-weight:600;
+}
+
+.about-container a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+.why-list{
+  list-style:none;
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.why-list li{
+  background:linear-gradient(135deg,#0d9488,#0f172a);
+  color:#ffffff;
+  padding:20px 24px;
+  border-radius:20px;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(13,148,136,.3);
+}
+
+/* =========================
+   FORM
+========================= */
+form.about-container{
+  max-width:600px;
+}
+
+form input,
+form textarea{
+  width:100%;
+  padding:16px 18px;
+  margin-bottom:18px;
+  border-radius:14px;
+  border:1px solid #cbd5f5;
+  font-size:16px;
+  outline:none;
+}
+
+form input:focus,
+form textarea:focus{
+  border-color:#0d9488;
+}
+
+/* =========================
+   MAP
+========================= */
+iframe{
+  border-radius:30px;
+  box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer{
+  background:linear-gradient(135deg,#0d9488,#0f172a);
+  color:#ffffff;
+  padding:110px 24px 40px;
+  border-radius:80px 80px 0 0;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px;
+}
+
+.footer-col h4{
+  color:#5eead4;
+  margin-bottom:18px;
+  text-transform:uppercase;
+  font-size:16px;
+}
+
+.footer-col a,
+.footer-col p{
+  color:rgba(255,255,255,.85);
+  font-size:16px;
+  margin-bottom:12px;
+  display:block;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+  opacity:.7;
+}
+
+/* =========================
+   FLOATING BUTTONS
+========================= */
+.floating-call,
+.floating-whatsapp{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:#ffffff;
+  z-index:9999;
+  box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.floating-call{
+  background:#0d9488;
+}
+
+.floating-whatsapp{
+  background:#25D366;
+  bottom:100px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:1024px){
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+  .hamburger{display:block;}
+
+  .nav-menu{
+    display:none;
+    position:absolute;
+    top:72px;
+    right:20px;
+    background:#0f172a;
+    padding:25px;
+    border-radius:20px;
+    flex-direction:column;
+    width:220px;
+  }
+
+  #menu-toggle:checked ~ .nav-menu{
+    display:flex;
+  }
+
+  .nav-menu a{
+    margin:14px 0;
+    text-align:right;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-list{
+    grid-template-columns:1fr;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+
+@media(max-width:480px){
+  .logo{font-size:20px;}
+}
